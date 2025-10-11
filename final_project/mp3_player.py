@@ -23,16 +23,19 @@ def make_playlist():
     pass
 
 def main():
-    #folder = list_folder("final_project/songs")
-    #song = input("Select a song to play: ")
-    #play_song(f"final_project/songs/{folder[int(song) - 1]}")
-
     while True:
-        select = ""
-        if select == "1":
-            list_folder("final_project/songs")
-        if select == "2":
-            play_song()
+        print("Welcome to the mp3 player")
+        print("1. Load playlist")
+        print("2. Make playlist")
+        print("3. Quit")
+        player_mode = input("Choose an option: ")
+
+        if player_mode == "1":
+            pass
+        elif player_mode == "2":
+            make_playlist()
+        elif player_mode == "3":
+            break
 
 if __name__ == "__main__":
     main()
