@@ -25,10 +25,9 @@ def list_folder(folder):
 
 def load_playlist(playlist_file):
     playlist = []
-    with open(f"final_project/playlists/{playlist_file}", "r") as file:
+    with open(f"{playlist_file}", "r") as file:
         for line in file:
             song_line = line.split(":")
-            
             playlist.append(song_line[1].strip())
     return playlist
 
@@ -88,7 +87,7 @@ def main():
                 directory = list_folder("final_project/playlists")
                 try:
                     current_playlist = directory[int(input("Select a playlist to load: ")) - 1]
-                    loaded_playlist = load_playlist(current_playlist)
+                    loaded_playlist = load_playlist(f"final_project/playlists/{current_playlist}")
                     song_index = 0
                     song = loaded_playlist[0]
                     song_path = f"final_project/songs/{song}"
